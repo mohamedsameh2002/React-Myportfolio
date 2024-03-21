@@ -28,9 +28,9 @@ export default function Work() {
                 </div>
                 <div className=" flexCenter flex-wrap gap-y-3 gap-x-4 h-fit ">
                     {PROJECTS.map((proj) => (
-                        <div key={proj.titel} className="w-[490px] h-64  max-lg:w-[510px] overflow-hidden rounded-lg  flex-col  relative flexCenter group">
+                        <div key={proj.titel} className="w-[490px] h-64  max-lg:w-[510px] max-sm:w-[405px] overflow-hidden rounded-lg  flex-col  relative flexCenter group">
                             <div onClick={closePopup} className={`${popup === proj.titel ? 'opacity-100' : ' opacity-0 pointer-events-none'} fixed inset-0 z-50  grid overflow-y-scroll custom-scrollbar h-screen w-screen place-items-center bg-black bg-opacity-60  backdrop-blur-sm transition-opacity duration-300`}>
-                                <div onClick={(e) => e.stopPropagation()} className={`${popup === proj.titel ? 'opacity-100 translate-y-0 scale-100  ' : '  opacity-0  -translate-y-28 scale-90 pointer-events-none'} transition-all duration-700 relative m-4 w-[70%] max-xl:w-[95%] rounded-lg px-8 py-4 ${POPUPBACKGROUND} shadow-2xl`}>
+                                <div onClick={(e) => e.stopPropagation()} className={`${popup === proj.titel ? 'opacity-100 translate-y-0 scale-100  ' : '  opacity-0  -translate-y-28 scale-90 pointer-events-none'} transition-all duration-700 relative m-4 w-[70%] min-w-[70%] max-xl:w-[95%] rounded-lg px-8 py-4 ${POPUPBACKGROUND} shadow-2xl`}>
                                     <div className=' flex justify-start gap-6 flex-col '>
                                         <div className="flexBetween w-full mb-8">
                                             <div className="flex flex-col w-1/2 gap-3">
@@ -46,17 +46,17 @@ export default function Work() {
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowFullScreen></iframe>
 
-                                        <div className="flex flex-wrap justify-around w-full ">
+                                        <div className="flex flex-wrap max-sm:flex-col justify-around w-full ">
                                             <h1 className=" font-bold text-stone-50 text-2xl w-[160px]">Project URL</h1>
                                             {proj.link == '' ? <p className="text-lg font-bold text-stone-300 w-72  ">It has not been uploaded yet</p> : <a className="truncate text-lg font-bold text-amber-200  w-72" href={proj.link}>{proj.link}</a>}
                                         </div>
 
-                                        {proj.fronEndLink !== '' && <div className="flex justify-around w-full ">
+                                        {proj.fronEndLink !== '' && <div className="flex max-sm:flex-col justify-around w-full ">
                                             <h1 className=" font-bold text-stone-50 text-2xl w-[160px]">Frontend URL</h1>
                                             <a target="_blank" className="truncate text-lg font-bold text-amber-200 hover:text-amber-50 duration-150 w-72" href={proj.fronEndLink}>{proj.fronEndLink}</a>
                                         </div>}
                                         {
-                                            proj.backEndLink !== '' && <div className="flex justify-around w-full ">
+                                            proj.backEndLink !== '' && <div className="flex max-sm:flex-col justify-around w-full ">
                                                 <h1 className=" font-bold text-stone-50 text-2xl w-[160px]">Backend URL</h1>
                                                 <a target="_blank" className="truncate text-lg font-bold text-amber-200 hover:text-amber-50 duration-150 w-72" href={proj.backEndLink}>{proj.backEndLink}</a>
                                             </div>
