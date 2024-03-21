@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'landing-img': "url('./background-landing.jpg')",
+        'landing-img': "url('./back-landing.jpg')",
       },
       fontFamily: {
         nunito: ["Nunito", 'sans-serif']
