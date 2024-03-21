@@ -3,8 +3,8 @@ import { motion } from "framer-motion"
 
 export default function Landing() {
     return (
-        <div className='h-screen animate-lanidingAnim w-full  flexCenter '>
-            <img src="./back-landing.jpg" className=' absolute -z-10 h-screen object-cover w-full' alt="" />
+        <div className='h-screen animate-lanidingAnim bg-gradient-to-r from-purple-500 to-pink-500 w-full  flexCenter '>
+            {/* <img src="./back-landing.jpg" className=' absolute -z-10 h-screen object-cover w-full' alt="" /> */}
             <div className='flex flex-col md:flex-row -mb-20 md:gap-x-16 max-md:gap-y-4 '>
                 <motion.div
                     initial={{ opacity: 0, left: '-80%' }}
