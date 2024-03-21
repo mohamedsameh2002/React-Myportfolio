@@ -10,7 +10,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'landing-img': "url('./back-landing.jpg')",
+        landingImg: "url('https://mohammed-sameh.vercel.app/myP.png')",
+
       },
       fontFamily: {
         nunito: ["Nunito", 'sans-serif']
