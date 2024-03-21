@@ -1,29 +1,29 @@
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+// import { useRef } from 'react';
+// import emailjs from '@emailjs/browser';
 import { IoIosSend } from 'react-icons/io';
 import { COMPONENTBACKGROUND } from '../data/Classes';
-
+// ref={form} onSubmit={sendEmail}
 
 export default function Contact() {
 
-    const form = useRef();
+    // const form = useRef(null);
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs
-            .sendForm('service_ey4uvwm', 'template_3znh8vi', form.current, {
-                publicKey: 'bx2x0fclsBbzvrYuH',
-            })
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                },
-            );
-    };
+    // const sendEmail = (e: {
+    //     target(target: any): unknown; preventDefault: () => void;}) => {
+    //     e.preventDefault();
+    //     emailjs
+    //         .sendForm('service_ey4uvwm', 'template_3znh8vi', form.current, {
+    //             publicKey: 'bx2x0fclsBbzvrYuH',
+    //         })
+    //         .then(
+    //             () => {
+    //                 console.log('SUCCESS!');
+    //             },
+    //             (error) => {
+    //                 console.log('FAILED...', error.text);
+    //             },
+    //         );
+    // };
 
     return (
         <div className={`flexCenter z-10 relative pb-16 ${COMPONENTBACKGROUND}`}>
@@ -33,7 +33,7 @@ export default function Contact() {
                     <hr className="border-gray-500 w-1/2" />
                 </div>
                 <div className=" flexCenter">
-                    <form ref={form} onSubmit={sendEmail} className='  w-1/2 flex flex-col gap-y-6 border-3 '>
+                    <form  className='  w-1/2 flex flex-col gap-y-6 border-3 '>
                         <div className="relative w-full min-w-[200px] h-14">
                             <input
                                 type='text'

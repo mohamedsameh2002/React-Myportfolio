@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { PROJECTS } from "../data/Projects";
 import { IoMdCheckbox, IoMdClose } from "react-icons/io";
 import { COMPONENTBACKGROUND, POPUPBACKGROUND, PROJECTHOVER } from "../data/Classes";
@@ -8,7 +8,7 @@ export default function Work() {
     const [allwowPlay, setAllwowPlay] = useState(true)
     const [dir, setDir] = useState('ltr')
 
-    const openPopup = (project) => {
+    const openPopup = (project: SetStateAction<string>) => {
         setPopup(project);
         setAllwowPlay(true)
         document.body.classList.add('overflow-hidden');
@@ -74,7 +74,7 @@ export default function Work() {
                                                     <>
                                                         {
                                                             proj.info.en.map((el) => (
-                                                                <div className="flex  my-4 justify-start items-center gap-2">
+                                                                <div key={el} className="flex  my-4 justify-start items-center gap-2">
                                                                     <IoMdCheckbox className="text-xl shrink-0 text-amber-50" />
                                                                     <p className="font-bold text-wrap capitapze text-2xl text-stone-200">{el}</p>
                                                                 </div>
@@ -85,7 +85,7 @@ export default function Work() {
                                                     <>
                                                         {
                                                             proj.info.ar.map((el) => (
-                                                                <div className="flex  my-4 justify-start items-center gap-2">
+                                                                <div key={el} className="flex  my-4 justify-start items-center gap-2">
                                                                     <IoMdCheckbox className="text-xl shrink-0 text-amber-50" />
                                                                     <p className="font-bold text-wrap capitapze text-2xl text-stone-200">{el}</p>
                                                                 </div>

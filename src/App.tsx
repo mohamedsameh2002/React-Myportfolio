@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 import './globals.css'
 import Landing from './components/Landing '
 import Header from './components/Header'
@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 import { LINKS } from './data/Links'
 import { useInView } from 'react-intersection-observer';
 import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
+import type {  Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
@@ -26,7 +26,7 @@ export default function App() {
   const [workRef, workView, workEntry] = useInView();
   const [contactRef, contactView, contacEntry] = useInView();
 
-  const scrollToSection = (section) => {
+  const scrollToSection = (section: SetStateAction<string>) => {
     setSection(section)
     switch (section) {
       case 'landing':
@@ -66,8 +66,8 @@ export default function App() {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await setIsReady(container?.started);
+  const particlesLoaded = useCallback(async () => {
+    await setIsReady(true);
     ;
   }, []);
 
