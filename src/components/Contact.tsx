@@ -1,43 +1,44 @@
-// import { useRef } from 'react';
-// import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { IoIosSend } from 'react-icons/io';
 import { COMPONENTBACKGROUND } from '../data/Classes';
-// ref={form} onSubmit={sendEmail}
+
 
 export default function Contact() {
 
-    // const form = useRef(null);
+    const form = useRef(null);
 
-    // const sendEmail = (e: {
-    //     target(target: any): unknown; preventDefault: () => void;}) => {
-    //     e.preventDefault();
-    //     emailjs
-    //         .sendForm('service_ey4uvwm', 'template_3znh8vi', form.current, {
-    //             publicKey: 'bx2x0fclsBbzvrYuH',
-    //         })
-    //         .then(
-    //             () => {
-    //                 console.log('SUCCESS!');
-    //             },
-    //             (error) => {
-    //                 console.log('FAILED...', error.text);
-    //             },
-    //         );
-    // };
+    const sendEmail = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        if (form.current) {
+            emailjs
+                .sendForm('service_ey4uvwm', 'template_3znh8vi', form.current, {
+                    publicKey: 'bx2x0fclsBbzvrYuH',
+                })
+                .then(
+                    () => {
+                        console.log('SUCCESS!');
+                    },
+                    (error) => {
+                        console.log('FAILED...', error.text);
+                    },
+                );
+        }
+    };
 
     return (
         <div className={`flexCenter z-10 relative pb-16 ${COMPONENTBACKGROUND}`}>
             <div className="container">
-                <div className="w-full my-16 flexCenter flex-col  ">
-                    <h1 className="font-extrabold text-3xl mb-2 ">contact</h1>
-                    <hr className="border-gray-500 w-1/2" />
+                <div className="w-full my-12 flexCenter flex-col  ">
+                    <h1 className="font-extrabold text-3xl mb-2 text-stone-700 ">Contact</h1>
+                    <p className='w-full text-center text-stone-600 text-md font-bold tracking-wider'>"Let's work together!"</p>
                 </div>
                 <div className=" flexCenter">
-                    <form  className='  w-1/2 max-md:w-96 flex flex-col gap-y-6 border-3 '>
+                    <form ref={form} onSubmit={sendEmail} className=' w-1/2 max-md:w-96 max-sm:w-80 flex flex-col gap-y-6 border-3 '>
                         <div className="relative w-full min-w-[200px] h-14">
                             <input
                                 type='text'
-                                name='user_name'
+                                name='to_name'
                                 className="peer text-lg w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 disabled:cursor-not-allowed transition-all placeholder-shown:border placeholder-shown:border-gray-700 placeholder-shown:border-t-gray-700 border focus:border-2 border-t-transparent focus:border-t-transparent placeholder:opacity-0 focus:placeholder:opacity-100  px-3 py-2.5 rounded-[7px] border-gray-700 focus:border-gray-900"
                                 placeholder=" " />
 
@@ -72,7 +73,7 @@ export default function Contact() {
                             className=" flex flexCenter gap-1 text-md w-full select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans  font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="submit">
                             Send
-                            <IoIosSend  className='text-2xl' />
+                            <IoIosSend className='text-2xl' />
                         </button>
                     </form>
                 </div>

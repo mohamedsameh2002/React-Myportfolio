@@ -10,9 +10,11 @@ import { motion } from "framer-motion"
 import { LINKS } from './data/Links'
 import { useInView } from 'react-intersection-observer';
 import { useCallback } from "react";
-import type {  Engine } from "tsparticles-engine";
+import type { Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { Grid } from 'react-loader-spinner'
+import { COMPONENTBACKGROUND } from './data/Classes'
 
 export default function App() {
   //Nav
@@ -67,19 +69,29 @@ export default function App() {
   }, []);
 
   const particlesLoaded = useCallback(async () => {
-    await setIsReady(true);
+    setTimeout(() => {
+      setIsReady(true);
+    }, 1200);
     ;
   }, []);
 
   if (!isReady) {
     return (
       <>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-      />
-      <div className='text-2xl font-extrabold w-full text-center relative z-50 bg-black h-screen'>loding</div>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+        />
+        <div className= {`w-full flexCenter relative z-50 ${COMPONENTBACKGROUND} h-screen`}>
+          <Grid
+            height="80"
+            width="80"
+            color="#78350f"
+            ariaLabel="loading"
+
+          />
+        </div>
       </>
     )
   }
@@ -91,7 +103,7 @@ export default function App() {
         <div className='flex gap-x-6 lg-gap-x-10 px-4 py-3 rounded-full lg:flex-col lg:gap-y-10 bg-black/10'>
           {LINKS.map((link) => (
             <button onClick={() => scrollToSection(link.section)} key={link.title} className={`${section === link.section ? 'text-white' : 'text-black'} relative group`}>
-              <motion.span className='h-12 w-12 flexCenter rounded-full' animate={{
+              <motion.span className='h-12 w-12  flexCenter rounded-full' animate={{
                 backgroundColor: ['#eee7d8', '#eee7d8', '#c0afa1', '#a69082', '#eee7d8'],
                 transition: { duration: 10, repeat: Infinity, ease: 'easeInOut' }
               }}>{link.icon}</motion.span>
@@ -179,11 +191,11 @@ export default function App() {
       />
       <div ref={landingRef}>
       </div>
-        <Landing></Landing>
+      <Landing></Landing>
 
-      <div  ref={skillsRef}>
+      <div ref={skillsRef}>
       </div>
-        <Skills></Skills>
+      <Skills></Skills>
 
       <div ref={workRef}>
       </div>

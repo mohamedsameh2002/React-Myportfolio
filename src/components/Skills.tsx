@@ -6,12 +6,13 @@ export default function Skills() {
     return (
         <div className={`flexCenter z-10 relative pb-16 ${COMPONENTBACKGROUND}`} >
             <div className="container">
-                <div className="w-full my-10 flexCenter flex-col  ">
-                    <h1 className="font-extrabold text-3xl mb-2 ">My Skills</h1>
-                    <hr className="border-gray-500 w-1/2" />
+                <div className="w-full my-12 flexCenter flex-col  ">
+                    <h1 className="font-extrabold text-3xl mb-2 text-stone-700 ">Tools used</h1>
+                    <p className='w-full text-center text-stone-600 text-md font-bold tracking-wider max-sm:tracking-normal'>"A person's value is based on what he does well"</p>
                 </div>
-                <div className="flex flex-col">
-                    <h1 className="w-full text-center font-bold my-6 text-2xl underline">LANGUAGES</h1>
+                <div className="flex flexCenter flex-col">
+                    <h1 className="w-full text-center font-bold mb-1 text-2xl  text-stone-600">languages</h1>
+                    <hr  className="w-52 border-stone-300 mb-8"/>
                     <div className="flexCenter flex-wrap gap-y-3 gap-x-5  2xl:px-72 xl:px-28 md:px-4  ">
                         {LANGUAGES.map((lang) => (
                             <motion.div
@@ -26,8 +27,9 @@ export default function Skills() {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <h1 className="w-full text-center font-bold my-6 text-2xl underline">Frameworks</h1>
+                <div className="flex flexCenter flex-col">
+                    <h1 className="w-full text-center font-bold mb-1 mt-7 text-2xl  text-stone-600">frameworks</h1>
+                    <hr  className="w-52 border-stone-300 mb-8"/>
                     <div className="flexCenter flex-wrap gap-y-3 gap-x-5 2xl:px-72 xl:px-28 md:px-4 ">
                         {FRAMEWORKS.map((framework) => (
                             <motion.div
@@ -42,8 +44,9 @@ export default function Skills() {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <h1 className="w-full text-center font-bold my-6 text-2xl underline">LIPRARYS</h1>
+                <div className="flex flexCenter flex-col">
+                    <h1 className="w-full text-center font-bold mb-1 mt-7 text-2xl  text-stone-600">libraries</h1>
+                    <hr  className="w-52 border-stone-300 mb-8"/>
                     <div className="flexCenter flex-wrap gap-y-3 gap-x-5 2xl:px-72 xl:px-28 md:px-4 ">
                         {LIPRARYS.map((lip) => (
                             <motion.div
@@ -60,8 +63,9 @@ export default function Skills() {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <h1 className="w-full text-center font-bold my-6 text-2xl underline">Databases</h1>
+                <div className="flex flexCenter flex-col">
+                    <h1 className="w-full text-center font-bold mb-1 mt-7 text-2xl  text-stone-600">databases</h1>
+                    <hr  className="w-52 border-stone-300 mb-8"/>
                     <div className="flexCenter flex-wrap gap-y-3 gap-x-5 2xl:px-72 xl:px-28 md:px-4 ">
                         {DATABASES.map((database) => (
                             <motion.div
@@ -76,8 +80,9 @@ export default function Skills() {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <h1 className="w-full text-center font-bold my-6 text-2xl underline">Tools</h1>
+                <div className="flex flexCenter flex-col">
+                    <h1 className="w-full text-center font-bold mb-1 mt-7 text-2xl  text-stone-600">tools</h1>
+                    <hr  className="w-52 border-stone-300 mb-8"/>
                     <div className="flexCenter flex-wrap gap-y-3 gap-x-5 2xl:px-72 xl:px-28 md:px-4 ">
                         {TOOLS.map((tool) => (
                             <motion.div

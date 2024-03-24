@@ -23,24 +23,25 @@ export default function Work() {
         <div className={`flexCenter relative ${COMPONENTBACKGROUND} pb-16`}>
             <div className="container">
                 <div className="w-full my-16 flexCenter flex-col  ">
-                    <h1 className="font-extrabold text-3xl mb-2 ">My Last Work</h1>
-                    <hr className="border-gray-500 w-1/2" />
+                    <h1 className="font-extrabold text-3xl mb-2 text-stone-700 ">Some of my projects</h1>
+                    <p className='w-full text-center text-stone-600 text-md font-bold tracking-wider'>"Perfection first"</p>
+
                 </div>
                 <div className=" flexCenter flex-wrap gap-y-3 gap-x-4 h-fit ">
                     {PROJECTS.map((proj) => (
-                        <div key={proj.titel} className="w-[490px] h-64  max-lg:w-[510px] max-sm:w-[405px] overflow-hidden rounded-lg  flex-col  relative flexCenter group">
+                        <div key={proj.titel} className="w-[490px] h-64  max-lg:w-[510px]  max-sm:w-[350px]  max-sm:h-52 overflow-hidden rounded-lg  flex-col  relative flexCenter group">
                             <div onClick={closePopup} className={`${popup === proj.titel ? 'opacity-100' : ' opacity-0 pointer-events-none'} fixed inset-0 z-50  grid overflow-y-scroll custom-scrollbar h-screen w-screen place-items-center bg-black bg-opacity-60  backdrop-blur-sm transition-opacity duration-300`}>
-                                <div onClick={(e) => e.stopPropagation()} className={`${popup === proj.titel ? 'opacity-100 translate-y-0 scale-100  ' : '  opacity-0  -translate-y-28 scale-90 pointer-events-none'} transition-all duration-700 relative m-4 w-[70%] min-w-[70%] max-xl:w-[95%] rounded-lg px-8 py-4 ${POPUPBACKGROUND} shadow-2xl`}>
+                                <div onClick={(e) => e.stopPropagation()} className={`${popup === proj.titel ? 'opacity-100 translate-y-0 scale-100  ' : '  opacity-0  -translate-y-28 scale-90 pointer-events-none'} transition-all duration-700 relative m-4 w-[70%] min-w-[70%] max-xl:w-[95%] rounded-lg p-8 my-8 ${POPUPBACKGROUND} shadow-2xl`}>
                                     <div className=' flex justify-start gap-6 flex-col '>
                                         <div className="flexBetween w-full mb-8">
                                             <div className="flex flex-col w-1/2 gap-3">
-                                                <h1 className=" font-bold text-stone-50 text-3xl">Project details</h1>
+                                                <h1 className=" font-bold text-stone-50 w-fit  text-nowrap text-3xl">Project details</h1>
                                                 <span className="w-full h-[1px] bg-stone-400"></span>
                                             </div>
                                             <IoMdClose onClick={closePopup} className="text-4xl cursor-pointer text-stone-50 hover:text-stone-200 duration-150" />
                                         </div>
                                         <iframe
-                                            className='w-full h-[70vh] my-8 rounded-lg'
+                                            className='w-full lg:h-[75vh] md:h-[65vh] sm:h-[40vh] max-sm:h-[40vh]  my-8 rounded-lg'
                                             src={allwowPlay ? proj.youtubeLink : ''}
                                             title="YouTube video player"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -63,11 +64,11 @@ export default function Work() {
                                         }
                                         <div dir={dir} className="flex w-full flex-col gap-3">
                                             <div className="flexCenter gap-3 flex-col">
-                                                <h1 className=" font-bold  text-stone-50 text-3xl ">Project URL</h1>
+                                                <h1 className=" font-bold  text-stone-50 text-3xl ">About</h1>
                                                 <span className="w-1/2 h-[1px] bg-stone-400"></span>
                                             </div>
                                             <div>
-                                                <button type="button" className="font-bold px-6 py-2 duration-200 hover:bg-black  text-2xl bg-stone-500  rounded-md  text-stone-200" onClick={() => setDir(dir === 'ltr' ? 'rtl' : 'ltr')}>{dir === 'ltr' ? 'عربي' : 'English'}</button>
+                                                <button type="button" className="font-bold px-3 py-1 duration-200 hover:bg-stone-800 text-lg bg-stone-900  rounded-md  text-stone-200" onClick={() => setDir(dir === 'ltr' ? 'rtl' : 'ltr')}>{dir === 'ltr' ? 'عربي' : 'English'}</button>
                                             </div>
                                             {
                                                 dir === 'ltr' ? (
@@ -100,7 +101,7 @@ export default function Work() {
                             </div>
                             <div className={`w-full h-full ${PROJECTHOVER} absolute opacity-0 group-hover:opacity-80 duration-500 transition-all`}></div>
                             <div className="transition-all   duration-300 absolute left-6 -top-12 group-hover:top-7 ">
-                                <p className=" py-2 px-4 rounded-full font-extrabold text-xl  text-white duration-200 transition-all capitalize">{proj.titel}</p>
+                                <p className=" py-2 px-4 rounded-full font-extrabold text-xl text-stone-50 duration-200 transition-all capitalize">{proj.titel}</p>
                             </div>
                             <img src={proj.imgae} alt="proj" className="object-cover w-full h-full" />
                             <div className="transition-all   duration-300 absolute -bottom-12 group-hover:bottom-14 ">
