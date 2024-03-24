@@ -20,8 +20,8 @@ export default function Skills() {
                                     transition: { duration: 1, ease: 'easeInOut' },
                                     rotateY: 360
                                 }}
-                                key={lang.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[170px] h-40 max-sm:h-36 max-sm:w-36`}>
-                                <img src={lang.icon} height={70} width={70} className=" max-sm:h-14 max-sm:w-14" alt="lang" />
+                                key={lang.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[165px] h-[165px] max-md:h-36 max-md:w-36`}>
+                                <img src={lang.icon} height={70} width={70} className=" max-md:h-14 max-md:w-14" alt="lang" />
                                 <p className="capitalize -mb-2 text-xl font-bold text-stone-900 max-sm:text-lg ">{lang.titel}</p>
                             </motion.div>
                         ))}
@@ -37,8 +37,8 @@ export default function Skills() {
                                     transition: { duration: 1, ease: 'easeInOut' },
                                     rotateY: 360
                                 }}
-                                key={framework.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[170px] h-40 max-sm:h-36 max-sm:w-36`}>
-                                <img src={framework.icon} className=" max-sm:h-14 max-sm:w-14" height={70} width={70} alt="framework" />
+                                key={framework.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[165px] h-[165px] max-md:h-36 max-md:w-36`}>
+                                <img src={framework.icon} className=" max-md:h-14 max-md:w-14" height={70} width={70} alt="framework" />
                                 <p className="capitalize -mb-2 text-xl font-bold text-stone-900 max-sm:text-lg ">{framework.titel}</p>
                             </motion.div>
                         ))}
@@ -54,9 +54,9 @@ export default function Skills() {
                                     transition: { duration: 1, ease: 'easeInOut' },
                                     rotateY: 360
                                 }}
-                                key={lip.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[170px] h-40 max-sm:h-36 max-sm:w-36`}>
+                                key={lip.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[165px] h-[165px] max-md:h-36 max-md:w-36`}>
 
-                                <img src={lip.icon} className=" object-cover max-sm:h-12 max-sm:w-14" height={70} width={74} alt="lip" />
+                                <img src={lip.icon} className=" object-cover max-md:h-14 max-md:w-14" height={70} width={74} alt="lip" />
 
                                 <p className="capitalize -mb-2 text-xl font-bold text-stone-900 max-sm:text-lg ">{lip.titel}</p>
                             </motion.div>
@@ -73,8 +73,8 @@ export default function Skills() {
                                     transition: { duration: 1, ease: 'easeInOut' },
                                     rotateY: 360
                                 }}
-                                key={database.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[170px] h-40 max-sm:h-36 max-sm:w-36`}>
-                                <img src={database.icon} className=" max-sm:h-14 max-sm:w-14" height={70} width={70} alt="database" />
+                                key={database.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[165px] h-[165px] max-md:h-36 max-md:w-36`}>
+                                <img src={database.icon} className=" max-md:h-14 max-md:w-14" height={70} width={70} alt="database" />
                                 <p className="capitalize -mb-2 text-xl font-bold text-stone-900 max-sm:text-lg ">{database.titel}</p>
                             </motion.div>
                         ))}
@@ -90,8 +90,8 @@ export default function Skills() {
                                     transition: { duration: 1, ease: 'easeInOut' },
                                     rotateY: 360
                                 }}
-                                key={tool.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[170px] h-40 max-sm:h-36 max-sm:w-36`}>
-                                <img src={tool.icon} className=" max-sm:h-14 max-sm:w-14" height={70} width={70} alt="tool" />
+                                key={tool.titel} className={`flexCenter shadow-2xl ${SKILLBACKGROUND} flex-col relative  rounded-full border w-[165px] h-[165px] max-md:h-36 max-md:w-36`}>
+                                <img src={tool.icon} className=" max-md:h-14 max-md:w-14" height={70} width={70} alt="tool" />
                                 <p className="capitalize -mb-2 text-xl font-bold text-stone-900 max-sm:text-lg ">{tool.titel}</p>
                             </motion.div>
                         ))}
