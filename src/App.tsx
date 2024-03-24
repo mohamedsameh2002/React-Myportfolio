@@ -15,6 +15,8 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { Grid } from 'react-loader-spinner'
 import { COMPONENTBACKGROUND } from './data/Classes'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
   //Nav
@@ -83,7 +85,7 @@ export default function App() {
           init={particlesInit}
           loaded={particlesLoaded}
         />
-        <div className= {`w-full flexCenter relative z-50 ${COMPONENTBACKGROUND} h-screen`}>
+        <div className={`w-full flexCenter relative z-50 ${COMPONENTBACKGROUND} h-screen`}>
           <Grid
             height="80"
             width="80"
@@ -98,6 +100,7 @@ export default function App() {
 
   return (
     <div className=''>
+      <ToastContainer ></ToastContainer>
       <Header></Header>
       <nav className=' fixed max-lg:bottom-2 max-lg:w-full flexCenter z-50 lg:right-2 lg:h-full'>
         <div className='flex gap-x-6 lg-gap-x-10 px-4 py-3 rounded-full lg:flex-col lg:gap-y-10 bg-black/10'>

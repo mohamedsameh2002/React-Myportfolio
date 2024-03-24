@@ -1,15 +1,17 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { IoIosSend } from 'react-icons/io';
 import { COMPONENTBACKGROUND } from '../data/Classes';
 import { toast } from 'react-toastify';
+import { Oval } from 'react-loader-spinner';
 
 
 export default function Contact() {
 
     const form = useRef(null);
-
+    const [isSending, setIsSending] = useState(false)
     const sendEmail = (e: { preventDefault: () => void; }) => {
+        setIsSending(true)
         e.preventDefault();
         if (form.current) {
             emailjs
@@ -19,6 +21,7 @@ export default function Contact() {
                 .then(
                     () => {
                         toast.success('sent succesfully')
+                        setIsSending(false)
                     },
                     () => {
                         toast.error('An error occurred, try again later')
@@ -71,10 +74,16 @@ export default function Contact() {
                             </label>
                         </div>
                         <button
-                            className=" flex flexCenter gap-1 text-md w-full select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans  font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            className={`flex flexCenter gap-2 text-md w-full select-none rounded-lg ${isSending ? 'bg-stone-600' : 'bg-stone-900'}  py-3 px-6 text-center align-middle font-sans  font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none`}
                             type="submit">
                             Send
-                            <IoIosSend className='text-2xl' />
+                            {isSending ?
+                                <Oval
+                                    height="25"
+                                    width="25"
+                                    color="#ffff"
+                                    ariaLabel="loading"
+                                /> : <IoIosSend className='text-2xl' />}
                         </button>
                     </form>
                 </div>
