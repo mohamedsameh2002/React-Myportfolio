@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { IoIosSend } from 'react-icons/io';
 import { COMPONENTBACKGROUND } from '../data/Classes';
+import { toast } from 'react-toastify';
 
 
 export default function Contact() {
@@ -17,10 +18,10 @@ export default function Contact() {
                 })
                 .then(
                     () => {
-                        console.log('SUCCESS!');
+                        toast.success('sent succesfully')
                     },
-                    (error) => {
-                        console.log('FAILED...', error.text);
+                    () => {
+                        toast.error('An error occurred, try again later')
                     },
                 );
         }
